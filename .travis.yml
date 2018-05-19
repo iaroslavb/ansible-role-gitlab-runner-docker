@@ -1,0 +1,23 @@
+---
+
+language: python
+python: "2.7"
+
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq python-apt
+  - sudo apt-get --reinstall install -qq python-apt python2.7
+  - sudo apt-get --reinstall install -qq apt-transport-https ca-certificates curl software-properties-common
+  - sudo apt-get remove docker-ce
+
+
+install:
+  - pip install ansible
+  - ansible-galaxy install iaroslavb.docker-ce
+
+script:
+  - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+

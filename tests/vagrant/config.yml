@@ -1,0 +1,8 @@
+---
+vm:
+  name:     "vmname_1"
+  cpus:     4
+  memory:   3000
+  gui:      false
+  box:      "ubuntu/xenial64"
+  ip:       192.168.88.222
