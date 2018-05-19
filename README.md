@@ -1,4 +1,4 @@
-<img style="float:left" alight="left" height="128px" width="128px" src="https://github.com/iaroslavb/ansible-role-gitlab-runner-logo/raw/master/runner_logo.png">
+<img style="float:left" alight="left" height="128px" width="128px" src="https://github.com/iaroslavb/ansible-role-gitlab-runner-docker/raw/master/runner_logo.png">
 
 Ansible Role: GitLab Runner (Docker)
 =========
