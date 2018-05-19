@@ -2,5 +2,9 @@
 - hosts: all 
   become: yes
   become_method: sudo
+  environment:
+    GITLAB_RUNNER_TOKEN:  "{{ lookup('env', 'GITLAB_RUNNER_TOKEN') }}"
+    GITLAB_SERVER_FQDN:   "{{ lookup('env', 'GITLAB_SERVER_FQDN') }}"
+    GITLAB_SERVER_IP:     "{{ lookup('env', 'GITLAB_SERVER_IP') }}"
   roles:
     - { role: ../../../ansible-role-gitlab-runner-docker }

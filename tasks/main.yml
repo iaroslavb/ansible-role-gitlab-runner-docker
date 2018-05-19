@@ -19,3 +19,6 @@
     name:     gitlab-runner.service
     state:    started
     enabled:  yes
+
+- name: Register Gitlab Runner
+  command: gitlab-runner register --non-interactive --url "http://$GITLAB_SERVER_IP/" --registration-token $GITLAB_RUNNER_TOKEN --executor docker --locked=false --run-untagged=false --tag-list test --limit 0 --run-untagged=true --docker-image ubuntu:16.04 --docker-extra-hosts "$GITLAB_SERVER_FQDN:$GITLAB_SERVER_IP"
